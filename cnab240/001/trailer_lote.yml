@@ -23,8 +23,14 @@ uso_exclusivo_febraban_01:
 qtde_registro_lote:
   pos: [18, 23]
   picture: '9(6)'
+  default: '2'
+
+somatorio_valores:
+  pos: [24, 41]
+  picture: '9(18)'
+  #default: '0'
 
 uso_exclusivo_febraban_02:
-  pos: [24, 240]
-  picture: 'X(217)'
+  pos: [42, 240]
+  picture: 'X(199)'
   default: ''

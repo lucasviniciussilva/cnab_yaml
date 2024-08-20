@@ -17,15 +17,16 @@ cobranca_cedente:
   # Informar 0014 para cobrança cedente
   pos: [42, 45]
   picture: '9(4)'
-  default: 14
+  default: 126
 
-carteira:
-  pos: [46, 47]
-  picture: '9(2)'
+reservado_banco:
+  pos: [46, 50]
+  picture: 'X(5)'
+  default: ''
 
-variacao_carteira:
-  pos: [48, 50]
-  picture: '9(3)'
+#variacao_carteira:
+  #pos: [48, 50]
+  #picture: '9(3)'
 
 uso_exclusivo_bb_01:
   pos: [51, 52]

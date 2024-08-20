@@ -1,0 +1,173 @@
+# Registro Detalhe - Segmento A (Obrigatório - Remessa)
+# Baseado na documentação do BB
+# Disponível em: http://www.bb.com.br/docs/pub/emp/empl/dwn/000Completo.pdf (Acesso em 22/06/2016)
+
+codigo_banco:
+  # Código fornecido pelo Banco Central para identificação do Banco que está recebendo ou enviando o
+  # arquivo, com o qual se firmou o contrato de prestação de serviços.
+  # CAIXA ECONÔMICA FEDERAL = ‘104’
+  pos: [1, 3]
+  picture: '9(3)'
+
+lote_servico:
+  # Lote de Serviço
+  # Número seqüencial para identificar cada lote de serviço.
+  # Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior
+  # acrescido de 1. Deve ser o mesmo número dentro do lote. O número não poderá ser repetido dentro
+  # do arquivo.
+  # Se registro for Header do Arquivo = '0000'
+  # Se registro for Trailer do Arquivo = '9999'
+  pos: [4, 7]
+  picture: '9(4)'
+
+tipo_registro:
+  # Código adotado pela FEBRABAN para identificar o tipo de registro.
+  # '3' = Detalhe
+  pos: [8, 8]
+  picture: '9(1)'
+  default: '3'
+
+numero_sequencial_lote:
+  # Nº Sequencial do Registro no Lote
+  # Deve ser iniciado sempre em 1, em cada novo lote
+  pos: [9, 13]
+  picture: '9(5)'
+
+codigo_segmento:
+  # Código adotado pela FEBRABAN para identificar o segmento do registro.
+  pos: [14, 14]
+  picture: 'X(1)'
+  default: 'B'
+
+uso_exclusivo_febraban_01:
+  pos: [15, 17]
+  picture: 'X(3)'
+  default: ''
+
+tipo_inscricao_favorecido_b:
+  #CPF = 1
+  #CNPJ = 2
+  pos: [18, 18]
+  picture: '9(1)'
+
+numero_inscricao_favorecido_b:
+  # Número da inscrição (CPF ou CNPJ) da Empresa, alinhado à direita com zeros à esquerda
+  pos: [19, 32]
+  picture: '9(14)'
+
+logradouro_b:
+  #Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'brancos'.
+  pos: [33, 62]
+  picture: 'X(30)'
+  default: ''
+
+numero_b:
+  #Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'zeros'.
+  pos: [63,67]
+  picture: 'X(5)'
+  default: '0'
+
+complemento_b:
+  #  Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'brancos'.
+  pos: [68,82]
+  picture: 'X(15)'
+  default: ''
+
+bairro_b:
+  #  Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'brancos'.
+  pos: [83,97]
+  picture: 'X(15)'
+  default: ''
+
+cidade_b:
+  #  Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'brancos'.
+  pos: [98,117]
+  picture: 'X(20)'
+  default: ''
+
+cep_b:
+  # Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar '00000'
+  pos: [118,122]
+  picture: 'X(5)'
+  default: '0'
+
+complemento_cep_b:
+  #  Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'brancos'.
+  pos: [123,125]
+  picture: 'X(3)'
+  default: ''
+
+estado_b:
+  # Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'brancos'.
+  pos: [126,127]
+  picture: 'X(2)'
+  default: ''
+
+vencimento_b:
+  #Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'zeros'.
+  pos: [128,135]
+  picture: 'X(8)'
+  default: '0'
+
+valor_documento_b:
+  #Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'zeros'.
+  pos: [136, 150]
+  picture: 'X(15)'
+  default: '0'
+
+abatimento_b:
+  #Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'zeros'.
+  pos: [151, 165]
+  picture: 'X(15)'
+  default: '0'
+
+desconto_b:
+  #Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'zeros'.
+  pos: [166, 180]
+  picture: 'X(15)'
+  default: '0'
+
+mora_b:
+  #Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'zeros'.
+  pos: [181, 195]
+  picture: 'X(15)'
+  default: '0'
+
+multa_b:
+  #Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'zeros'.
+  pos: [196, 210]
+  picture: 'X(15)'
+  default: '0'
+
+codigo_documento_favorecido_b:
+  # Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'brancos'.
+  pos: [211,225]
+  picture: 'X(15)'
+  default: ''
+
+aviso_b:
+  # Código adotado pela FEBRABAN para identificar a necessidade de emissão de aviso de
+  # pagamento ao Favorecido.
+  # ---------------------------------
+  # Código | Descrição
+  # ---------------------------------
+  # ‘0’   | Não Emite Aviso
+  # ‘2’   | Emite Aviso Somente para o Remetente
+  # ‘5’   | Emite Aviso Somente para o Favorecido
+  # ‘6’   | Emite Aviso para o Remetente e Favorecido
+  # ‘7’   | Emite Aviso para o Favorecido e 2 Vias para o Remetente
+  pos: [226, 226]
+  picture: '9(1)'
+  default: '0'
+
+uso_exclusivo_siape_b:
+  # Campo opcional, não tratado pelo Banco do Brasil. Caso não preenchido informar 'zeros'.
+  pos: [227, 232]
+  picture: 'X(6)'
+  default: '0'
+
+codigo_ipsb_b:
+  # Código da ocorrencia para retorno
+  pos: [233, 240]
+  picture: 'X(8)'
+  default: ''

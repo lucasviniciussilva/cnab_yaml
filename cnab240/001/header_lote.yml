@@ -1,9 +1,17 @@
+tipo_servico:
+  # Tipo de Serviço
+  # Código adotado pela FEBRABAN para indicar o tipo de serviço / produto contido no arquivo / lote:
+  # '01' = Cobrança
+  # ‘03’ = Bloqueto Eletrônico
+  # Padrão: '01'
+  pos: [10, 11]
+  picture: '9(2)'
+
 # Uso Exclusivo FEBRABAN/CNAB
 uso_exclusivo_febraban_hl01:
   # Informar 'brancos' (espaços).
   pos: [12, 13]
   picture: 'X(2)'
-  default: ''
 
 versao_layout_lote:
   # Campo não criticado pelo sistema. Informar Zeros OU se preferir,
@@ -26,8 +34,8 @@ versao_layout_lote:
 
 numero_inscricao:
   # Informar o número de inscrição da Empresa (CNPJ) ou Pessoa Física (CPF).
-  pos: [19, 33]
-  picture: '9(15)'
+  pos: [19, 32]
+  picture: '9(14)'
 
 codigo_convenio:
   # Código de convênio no Banco
@@ -38,43 +46,120 @@ codigo_convenio:
   # O contrato deve estar cadastrado no PAG (Pagamentos a terceiros) no
   # serviço 30 (Pagamentos de títulos do Banco do Brasil) e no serviço 31
   # (Pagamentos de títulos de outros bancos).
-  pos: [34, 42]
+  pos: [33, 41]
   picture: '9(9)'
 
 cobranca_cedente:
   # Informar 0014 para cobrança cedente
-  pos: [43, 46]
+  pos: [42, 45]
   picture: '9(4)'
-  default: 14
+  default: 126
 
-carteira:
-  pos: [47, 48]
-  picture: '9(2)'
+#carteira:
+  #pos: [47, 48]
+  #picture: '9(2)'
 
-variacao_carteira:
-  pos: [49, 51]
-  picture: '9(3)'
+#variacao_carteira:
+  #pos: [49, 51]
+  #picture: '9(3)'
+
+reservado_banco:
+  pos: [46, 50]
+  picture: 'X(5)'
+  default: ''
 
 remessa_teste:
-  pos: [52, 53]
+  pos: [51, 52]
   picture: 'X(2)'
   default: ''
 
+agencia:
+  # Código da Agência mantenedora da conta, fornecido pela CAIXA.
+  pos: [ 53, 57 ]
+  picture: '9(5)'
+
+agencia_dv:
+   # Dígito Verificador da Agência mantendedora da conta, fornecido pela CAIXA.
+  pos: [ 58, 58 ]
+  picture: '9(1)'
+
 conta:
-  pos: [60, 71]
+  pos: [59, 70]
   picture: '9(12)'
 
 conta_dv:
-  pos: [72, 72]
+  pos: [71, 71]
   picture: 'X(1)'
 
 agencia_mais_conta_dv:
-  pos: [73, 73]
+  pos: [72, 72]
   picture: 'X(1)'
   default: ''
 
-data_credito_obsoleto:
-  # Campo não tradado pelo banco do brasil
-  pos: [200, 207]
-  picture: '9(8)'
+nome_empresa:
+  # Nome que identifica a pessoa, física ou jurídica, a qual se quer fazer referência
+  pos: [73, 102]
+  picture: 'X(30)'
+
+mensagem_1:
+  # Mensagem 1 / 2
+  # Texto referente a mensagens que serão impressas, em todos os bloquetos referentes ao mesmo lote, no
+  # corpo de instruções da ficha de compensação e do recibo do sacado do bloqueto.
+  # Estes campos não serão utilizados no arquivo retorno.
+  pos: [103, 142]
+  picture: 'X(40)'
+  default: ''
+
+logradouro:
+  #campo opicional
+  pos: [143, 172]
+  picture: 'X(30)'
+  default: ''
+
+nlocal:
+  #campo opicional
+  pos: [173, 177]
+  picture: 'X(5)'
   default: '0'
+
+complemento:
+  #campo opicional
+  pos: [178, 192]
+  picture: 'X(15)'
+  default: ''
+
+cidade:
+  #campo opicional
+  pos: [193, 212]
+  picture: 'X(20)'
+  default: ''
+
+cep:
+  #campo opicional
+  pos: [213, 217]
+  picture: 'X(5)'
+  default: '0'
+
+complemento_cep:
+  #campo opicional
+  pos: [218, 220]
+  picture: 'X(3)'
+  default: ''
+
+estado_uf:
+  #campo opicional
+  pos: [221, 222]
+  picture: 'X(2)'
+  default: '0'
+
+cnabfebraban:
+  #campo opicional 0
+  pos: [223, 230]
+  picture: 'X(8)'
+  default: ''
+
+ocorrencias:
+  # 0 9(10)
+  pos: [231, 240 ]
+  picture: 'X(10)'
+  default: ''
